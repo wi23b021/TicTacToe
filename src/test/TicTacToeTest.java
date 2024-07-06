@@ -49,4 +49,23 @@ public class TicTacToeTest {
         }
         assertTrue(board.isFull());
     }
+
+    @Test
+    public void testInvalidMove() {
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        board.place(0, 0, 'O');
+        assertEquals('X', board.getMarker(0, 0)); // Assuming a method getMarker(x, y)
+    }
+
+    @Test
+    public void testGameStateAfterWin() {
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        board.place(0, 1, 'X');
+        board.place(0, 2, 'X');
+        assertTrue(board.hasWinner());
+        board.place(1, 0, 'O');
+        assertEquals(' ', board.getMarker(1, 0)); // Assuming no more moves allowed after win
+    }
 }
