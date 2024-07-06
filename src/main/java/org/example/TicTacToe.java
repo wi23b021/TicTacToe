@@ -1,10 +1,10 @@
-import java.util.Scanner;
+package org.example;
 
 public class TicTacToe {
-    private Player player1;
-    private Player player2;
-    private Player currentPlayer;
-    private Board board;
+    private final Player player1;
+    private final Player player2;
+    private final Player currentPlayer;
+    private final Board board;
 
     public TicTacToe() {
         player1 = new Player('X');
@@ -12,6 +12,8 @@ public class TicTacToe {
         currentPlayer = player1;
         board = new Board();
     }
+
+  
 
     public void start() {
         while (!board.isFull() && !board.hasWinner()) {
